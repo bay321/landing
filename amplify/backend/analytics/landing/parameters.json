@@ -1,0 +1,21 @@
+{
+    "appName": "landing",
+    "roleName": "pinpointLambdaRoleb86700d6",
+    "cloudformationPolicyName": "cloudformationPolicyb86700d6",
+    "cloudWatchPolicyName": "cloudWatchPolicyb86700d6",
+    "pinpointPolicyName": "pinpointPolicyb86700d6",
+    "authPolicyName": "pinpoint_amplify_b86700d6",
+    "unauthPolicyName": "pinpoint_amplify_b86700d6",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

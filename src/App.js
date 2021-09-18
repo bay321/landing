@@ -1,11 +1,40 @@
-// import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import awsconfig from './aws-exports';
 import mainpic1 from './assets/mainpic1.jpg';
 import logo from './assets/logo.png';
 import community from './assets/community.png';
 import number from './assets/number.png';
 import './App.css';
+import Axios from 'axios'
 
 function App() {
+
+
+  const [name, setName] = useState('')
+  const [birthday, setBirthday] = useState('')
+  const spec = () => {
+    Axios.get('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/data').then((response) => {
+      alert(response.data[0].name)
+    })
+  }
+  const spec2 = () => {
+    // Axios.get(`http://localhost:3001/name/${name}`
+    // ).then((response) => {
+    //   setList([{ name: response.data[0].name, profile: response.data[0].id }])
+    // })
+    // .then(window.location.href = '/${name}')
+
+    Axios.get('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/data').then((response) => {
+      alert(response.data[1].name)
+    })
+  }
+  const submit = () => {
+    Axios.post('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/api/insert',{
+      name:name,
+      birthday:birthday
+    })
+  }
+
   return (
     <div>
       <img class="logo" src={logo} />
@@ -63,6 +92,23 @@ function App() {
           </div>
         </div>
       </div>
+        <label>이름:</label>
+        <input type="text" name="name" onChange={(e) => {
+          setName(e.target.value)
+        }}></input>
+        <label>생일:</label>
+        <input type="text" name="birthday" onChange={(e) => {
+          setBirthday(e.target.value)
+        }}></input>
+        <button onClick={submit}>Submit</button>
+      {/* ${Axios.get('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/').then((response) => {
+      console.log(response.data)
+    })} */}
+    {/* ${Axios.get('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/data').then((response) => {
+      console.log(response.data[0].id)
+    })} */}
+    <h1 onClick={()=>{spec()}} class="App">홍길동씨 이름</h1>
+    <h1 onClick={()=>{spec2()}} class="App">김갑수씨 이름</h1>
       <div class="process-container">
         <div>
           지금 바로 예약하세요
