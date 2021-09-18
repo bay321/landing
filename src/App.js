@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import awsconfig from './aws-exports';
+// import awsconfig from './aws-exports';
 import mainpic1 from './assets/mainpic1.jpg';
 import logo from './assets/logo.png';
 import community from './assets/community.png';
