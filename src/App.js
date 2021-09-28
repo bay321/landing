@@ -13,7 +13,7 @@ function App() {
   const [name, setName] = useState('')
   const [birthday, setBirthday] = useState('')
   const spec = () => {
-    Axios.get('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/data').then((response) => {
+    Axios.get('https://makeup-home.com/data').then((response) => {
       alert(response.data[0].name)
     })
   }
@@ -24,12 +24,12 @@ function App() {
     // })
     // .then(window.location.href = '/${name}')
 
-    Axios.get('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/data').then((response) => {
+    Axios.get('https://makeup-home.com/data').then((response) => {
       alert(response.data[1].name)
     })
   }
   const submit = () => {
-    Axios.post('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/api/insert',{
+    Axios.post('https://makeup-home.com/api/insert',{
       name:name,
       birthday:birthday
     })
@@ -92,15 +92,6 @@ function App() {
           </div>
         </div>
       </div>
-        <label>이름:</label>
-        <input type="text" name="name" onChange={(e) => {
-          setName(e.target.value)
-        }}></input>
-        <label>생일:</label>
-        <input type="text" name="birthday" onChange={(e) => {
-          setBirthday(e.target.value)
-        }}></input>
-        <button onClick={submit}>Submit</button>
       {/* ${Axios.get('http://node-env.eba-y8awnjvb.ap-northeast-2.elasticbeanstalk.com/').then((response) => {
       console.log(response.data)
     })} */}
@@ -114,25 +105,39 @@ function App() {
           지금 바로 예약하세요
         </div>
         <div>
-          이름 <input type="text" name="name" />
+          이름 <input type="text" name="name" onChange={(e) => {
+          setName(e.target.value)
+        }}></input>
         </div>
         <div>
-          전화번호 <input type="text" name="number" />
+          생일 <input type="text" name="birthday" onChange={(e) => {
+          setBirthday(e.target.value)
+        }}></input>
         </div>
-        <div>
+        {/* <div>
           날짜 <input type="text" name="date" />
         </div>
         <div>
           행사종류 <input type="text" name="event" />
-        </div>
-        <button>
+        </div> */}
+        <button onClick={submit}>
           예약하기
         </button>
+        {/* <label>이름:</label>
+        <input type="text" name="name" onChange={(e) => {
+          setName(e.target.value)
+        }}></input>
+        <label>생일:</label>
+        <input type="text" name="birthday" onChange={(e) => {
+          setBirthday(e.target.value)
+        }}></input>
+        <button onClick={submit}>Submit</button> */}
         <hr></hr>
         <div>
           아티스트 등록 문의 010-2250-4120
         </div>
       </div>
+      
       <a
         className="App-link"
         href="https://reactjs.org"
