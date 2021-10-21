@@ -56,8 +56,53 @@
   justify-content: center;
   font-size: 1.2vw;
 }
-.process-container{
-  flex:0.18;
+.signup-page{
+  display: flex;
+  justify-content: space-around;
+}
+.signup-content{
+  width: 45vw;
+  text-align: center;
+  background-color: antiquewhite;
+}
+.signup-container{
+  width: 45vw;
+  text-align: center;
+  background-color: bisque;
+}
+.interview-nav-wrapper{
+  display: flex;
+  /* width: 100vw; */
+  /* background-color: bisque; */
+  justify-content: left;
+  border-bottom: 2px solid black;
+  margin-bottom: 1vh;
+}
+.interview-nav{
+  border: 2px solid black;
+  border-bottom: none;
+  width: 9vw;
+  text-align: center;
+  margin-left: 1vw;
+}
+.interview-search-wrapper{
+  border:1.5px solid black;
+}
+.interview-select-wrapper{
+  display: flex;
+  align-items: center;
+  width: 25vw;
+  justify-content: space-around;
+  background-color: antiquewhite;
+}
+.interview-row-wrapper{
+  display: flex;
+}
+.interview-selcet{
+  width: 70%;
+}
+.interview-font{
+  width: 20%;
   text-align: center;
 }
 .process-img{
@@ -65,4 +110,63 @@
 }
 .process-number{
   width: 15%;
+}
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  background-color: #646464;
+}
+.company-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.company-note{
+  /* flex-grow: 1; */
+  width: 45%;
+  background-color:cadetblue;
+  height: 25vh;
+}
+.interview-list-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.interview-list-note{
+  width: 22%;
+  background-color:cadetblue;
+  margin-bottom: 2vh;
+}
+.interview-list-owner{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+.interview-list-font{
+  border:1px solid black;
+  border-radius: 0.2vw;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+.interview-month-header{
+  background-color: antiquewhite;
+  text-align: center;
+}
+.interview-month-box{
+  border:1px solid black;
+  /* text-align: center; */
+}
+.interview-month-image{
+  text-align: center;
+}
+.interview-detail-tag{
+  border:1px solid black;
+  border-radius: 0.2vw;
+  width: 14vw;
+  margin-left: 1vw;
+}
+.matching-box{
+  background-color: aquamarine;
+  margin-bottom: 1vh;
+  text-align: center;
 }
